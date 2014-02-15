@@ -42,7 +42,7 @@ public class Graph{
 		return adj.containsKey(vertex2);		
 	}
 	
-	public int getDistance(String vertex1, String vertex2){
+	public Integer getDistance(String vertex1, String vertex2){
 		
 		Map<String, Integer> adjacent = map.get(vertex1);
 		

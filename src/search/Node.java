@@ -3,8 +3,10 @@ package search;
 public class Node {
 	
 	String name;
-	static boolean visited;
-	final int priority;
+	boolean visited;
+	int priority;
+	double cost;
+	int depth;
 	Node(String name, int priority){
 		this.visited = false;
 		this.name = name;
@@ -15,8 +17,13 @@ public class Node {
 		this.name = newNode.name;
 		this.priority = newNode.priority;
 		this.visited = newNode.visited;
-		
+		this.cost = 0;
 	
+	}
+	
+	public Node(Node newNode, double cost){
+		this(newNode);
+		this.cost = cost;
 	}
 	public String getName(){
 		return this.name;
@@ -25,7 +32,7 @@ public class Node {
 	public Node getNode(String value){
 		
 		if(value == this.name){
-			return  this;
+			return  Node.this;
 		}
 		
 		return null;
